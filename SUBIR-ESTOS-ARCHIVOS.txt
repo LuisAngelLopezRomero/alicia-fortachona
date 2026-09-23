@@ -1,0 +1,13 @@
+ARREGLO DEFINITIVO DE LAS FOTOS
+
+Sube a la RAÍZ del repositorio estos 4 archivos:
+1. index.html
+2. sw.js
+3. alicia-portada-v3.jpg
+4. alicia-fortachona-v3.jpg
+
+No van dentro de ninguna carpeta.
+Después haz Commit changes, espera 1-2 minutos y recarga la web.
+
+La portada usa alicia-portada-v3.jpg.
+La transformación usa alicia-portada-v3.jpg y alicia-fortachona-v3.jpg.
