@@ -1,0 +1,16 @@
+{
+  "name": "Alicia Fortachona",
+  "short_name": "Fortachona",
+  "description": "Entreno, dieta, recetas y progreso con humor.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10091d",
+  "theme_color": "#3b176f",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

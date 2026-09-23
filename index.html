@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#3b176f" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Alicia Fortachona: entreno, comidas, recetas y progreso con humor." />
+  <title>Alicia Fortachona</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/icon-180.png" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <noscript>Esta app necesita JavaScript para funcionar.</noscript>
+
+  <main id="app" class="app-shell" aria-live="polite">
+    <section id="screen-splash" class="screen screen--active splash" data-screen="splash">
+      <div class="splash__media">
+        <picture>
+          <source srcset="./assets/alicia-original.webp" type="image/webp" />
+          <img src="./assets/alicia-original.jpg" alt="Alicia con sus hijos en una bolera" class="splash__image" />
+        </picture>
+        <div class="splash__shade"></div>
+      </div>
+      <div class="splash__content">
+        <span class="eyebrow">Proyecto madre coraje</span>
+        <h1>Alicia <span>Fortachona</span></h1>
+        <p class="lead">Entre gritos, juguetes y supervivencia: nace Alicia Fortachona.</p>
+        <button id="btn-fortachona" class="btn btn--primary btn--xl" type="button">💪 Ponerse en modo Fortachona</button>
+        <p class="microcopy">Entrenos en casa · dieta práctica · progreso sin dramas</p>
+      </div>
+    </section>
+
+    <section id="screen-transform" class="screen transform" data-screen="transform" hidden>
+      <div class="top-pad"></div>
+      <div class="page-wrap transform__wrap">
+        <span class="eyebrow">Transformación desbloqueada</span>
+        <h2>Has cruzado la puerta.</h2>
+        <p class="transform__headline">Ya no eres Alicia.<br><strong>Eres ALICIA FORTACHONA.</strong></p>
+
+        <div class="before-after" aria-label="Antes y después de Alicia">
+          <article class="photo-card">
+            <picture>
+              <source srcset="./assets/alicia-original.webp" type="image/webp" />
+              <img src="./assets/alicia-original.jpg" alt="Alicia Debilucha" />
+            </picture>
+            <div class="photo-card__label">Alicia Debilucha</div>
+          </article>
+          <div class="transform-arrow" aria-hidden="true">→</div>
+          <article class="photo-card photo-card--strong">
+            <picture>
+              <source srcset="./assets/alicia-fortachona.webp" type="image/webp" />
+              <img src="./assets/alicia-fortachona.jpg" alt="Alicia Fortachona levantando a sus hijos" />
+            </picture>
+            <div class="photo-card__label">Alicia Fortachona</div>
+          </article>
+        </div>
+
+        <blockquote>“El drama sigue. Pero ahora con bíceps.”</blockquote>
+        <button id="btn-enter-app" class="btn btn--primary btn--xl" type="button">Entrar al cuartel general</button>
+      </div>
+    </section>
+
+    <section id="screen-main" class="screen main-app" data-screen="main" hidden>
+      <header class="app-header">
+        <div>
+          <span class="eyebrow">Alicia Fortachona</span>
+          <h2 id="section-title">Hoy</h2>
+        </div>
+        <button id="install-button" class="icon-btn" type="button" aria-label="Instalar aplicación" title="Instalar aplicación">＋</button>
+      </header>
+
+      <div id="view-home" class="view view--active" data-view="home">
+        <section class="hero-card">
+          <div>
+            <span class="chip">Modo Fortachona activo</span>
+            <h3 id="greeting-title">Hoy se sobrevive entrenando</h3>
+            <p id="daily-joke">Pablo no recoge los juguetes. Tú sí recoges repeticiones.</p>
+          </div>
+          <div class="hero-card__emoji" aria-hidden="true">💪</div>
+        </section>
+
+        <section class="stats-grid" aria-label="Resumen semanal">
+          <article class="stat-card"><span>Entrenos</span><strong id="stat-workouts">0/3</strong><small>esta semana</small></article>
+          <article class="stat-card"><span>Peso</span><strong id="stat-weight">67,7 kg</strong><small>último registro</small></article>
+          <article class="stat-card"><span>Objetivo</span><strong id="stat-progress">0%</strong><small>del camino</small></article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Plan de la semana</span><h3>3 días. Ni uno más por postureo.</h3></div></div>
+          <div id="home-workouts" class="stack"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Menú</span><h3>Comer normal, pero con intención</h3></div></div>
+          <div class="menu-card">
+            <div><strong>3 comidas + 1 merienda opcional</strong><p>La frecuencia no es mágica: manda el total diario y que el plan sea sostenible.</p></div>
+            <button class="btn btn--secondary" data-nav="diet" type="button">Ver dieta</button>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="safety-card compact">
+            <strong>Diástasis: regla de oro</strong>
+            <p>Exhala en el esfuerzo. Si aparece abombamiento/coning, dolor o presión pélvica, reduce la dificultad o detén el ejercicio.</p>
+          </div>
+        </section>
+      </div>
+
+      <div id="view-training" class="view" data-view="training" hidden>
+        <section class="section-block no-top">
+          <div class="section-heading"><div><span class="eyebrow">Fase 1</span><h3>Entreno en casa · sin material</h3><p>Objetivo semanal: 3 sesiones de 25–35 min.</p></div></div>
+          <div id="training-list" class="stack"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="phase-card" id="bands-phase-card">
+            <div><span class="chip chip--muted">Fase 2</span><h3>Alicia contra las bandas</h3><p>Se desbloquea cuando ya tenga bandas elásticas.</p></div>
+            <button id="bands-toggle" class="btn btn--secondary" type="button">Ya tengo bandas</button>
+          </div>
+          <div id="band-workouts" class="stack" hidden></div>
+        </section>
+
+        <section class="section-block">
+          <details class="details-card">
+            <summary>Seguridad con la diástasis</summary>
+            <div class="details-card__content">
+              <p>Prioriza movimientos lentos y controlados. Evita contener la respiración. Si un ejercicio produce un abombamiento marcado de la línea media, baja el rango, cambia la variante o detente.</p>
+              <p>Si hay dolor, bulto compatible con hernia, síntomas de suelo pélvico o dudas sobre la gravedad de la diástasis, conviene valoración por fisioterapia de suelo pélvico o un profesional sanitario.</p>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <div id="view-diet" class="view" data-view="diet" hidden>
+        <section class="calorie-card">
+          <span class="eyebrow">Estimación diaria</span>
+          <div class="calorie-grid">
+            <div><small>Mantenimiento estimado</small><strong id="maintenance-kcal">—</strong><span>kcal/día</span></div>
+            <div><small>Objetivo inicial</small><strong id="target-kcal">—</strong><span>kcal/día</span></div>
+          </div>
+          <p id="calorie-note" class="muted">Falta completar edad y actividad en Ajustes para calcular una estimación.</p>
+          <button class="btn btn--secondary" data-nav="settings" type="button">Completar perfil</button>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Estructura</span><h3 id="meal-plan-title">3 comidas + 1 merienda opcional</h3></div></div>
+          <div id="meal-distribution" class="meal-grid"></div>
+          <p class="muted small">Las calorías son una estimación, no una prescripción. Ajusta según evolución, hambre, rendimiento y consejo profesional.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Menú automático</span><h3>Hoy no pienso pensar qué cocinar</h3></div><button id="generate-menu" class="btn btn--secondary" type="button">Generar</button></div>
+          <div id="daily-menu" class="stack"></div>
+        </section>
+      </div>
+
+      <div id="view-recipes" class="view" data-view="recipes" hidden>
+        <section class="section-block no-top">
+          <div class="section-heading"><div><span class="eyebrow">Recetas Fortachona</span><h3>Con la compra de Alicia</h3><p>Calorías y macros aproximados por ración.</p></div></div>
+          <div class="filter-row" role="group" aria-label="Filtrar recetas">
+            <button class="filter-btn is-active" data-filter="all" type="button">Todas</button>
+            <button class="filter-btn" data-filter="breakfast" type="button">Desayuno</button>
+            <button class="filter-btn" data-filter="lunch" type="button">Comida</button>
+            <button class="filter-btn" data-filter="dinner" type="button">Cena</button>
+            <button class="filter-btn" data-filter="quick" type="button">≤10 min</button>
+          </div>
+          <div id="recipes-list" class="recipe-grid"></div>
+        </section>
+      </div>
+
+      <div id="view-progress" class="view" data-view="progress" hidden>
+        <section class="goal-card">
+          <span class="eyebrow">Objetivo inicial</span>
+          <div class="goal-row"><strong id="goal-current">67,7 kg</strong><span>→</span><strong id="goal-target">59,2 kg</strong></div>
+          <div class="progress-track"><div id="goal-progress-bar" class="progress-track__fill" style="width:0%"></div></div>
+          <p><strong id="goal-progress-text">0%</strong> completado · <span id="goal-remaining">8,5 kg</span> por recorrer</p>
+          <small class="muted">El objetivo es editable. La foto “Fortachona” es humor, no una promesa corporal.</small>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Peso semanal</span><h3>Miramos tendencia, no dramas</h3></div><button id="add-weight-button" class="btn btn--secondary" type="button">+ Registrar</button></div>
+          <div class="chart-card"><svg id="weight-chart" viewBox="0 0 640 260" role="img" aria-label="Gráfica de evolución del peso"></svg></div>
+          <div id="weight-list" class="weight-list"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Logros</span><h3>Pequeñas victorias</h3></div></div>
+          <div id="achievements" class="achievement-grid"></div>
+        </section>
+      </div>
+
+      <div id="view-settings" class="view" data-view="settings" hidden>
+        <section class="section-block no-top">
+          <div class="section-heading"><div><span class="eyebrow">Perfil</span><h3>Datos de Alicia</h3></div></div>
+          <form id="profile-form" class="form-card">
+            <label>Altura (cm)<input id="profile-height" type="number" min="130" max="210" step="1" inputmode="numeric" required></label>
+            <label>Peso inicial (kg)<input id="profile-start-weight" type="number" min="35" max="200" step="0.1" inputmode="decimal" required></label>
+            <label>Objetivo inicial (kg)<input id="profile-goal-weight" type="number" min="35" max="200" step="0.1" inputmode="decimal" required></label>
+            <label>Edad<input id="profile-age" type="number" min="18" max="90" step="1" inputmode="numeric" placeholder="Falta este dato"></label>
+            <label>Actividad diaria
+              <select id="profile-activity">
+                <option value="">Seleccionar…</option>
+                <option value="1.2">Muy baja / sedentaria</option>
+                <option value="1.375">Ligera (algo de movimiento + 1–3 entrenos)</option>
+                <option value="1.55">Moderada (3–5 entrenos + vida activa)</option>
+                <option value="1.725">Alta</option>
+              </select>
+            </label>
+            <label>Déficit inicial
+              <select id="profile-deficit">
+                <option value="250">Suave · 250 kcal/día</option>
+                <option value="350">Moderado · 350 kcal/día</option>
+                <option value="450">Más marcado · 450 kcal/día</option>
+              </select>
+            </label>
+            <label>Número de comidas
+              <select id="profile-meals">
+                <option value="4">3 + 1 merienda opcional</option>
+                <option value="3">3 comidas</option>
+              </select>
+            </label>
+            <button class="btn btn--primary" type="submit">Guardar cambios</button>
+          </form>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">Datos</span><h3>Todo se guarda en este dispositivo</h3></div></div>
+          <div class="button-stack">
+            <button id="export-data" class="btn btn--secondary" type="button">Exportar copia de seguridad</button>
+            <label class="btn btn--secondary file-btn">Importar copia<input id="import-data" type="file" accept="application/json" hidden></label>
+            <button id="reset-data" class="btn btn--danger" type="button">Restablecer app</button>
+          </div>
+          <p class="muted small">No hay cuenta ni servidor en esta versión. Si borras los datos del navegador, se pierde el progreso salvo que hayas exportado una copia.</p>
+        </section>
+
+        <section class="section-block">
+          <details class="details-card">
+            <summary>Instalar en el móvil</summary>
+            <div class="details-card__content">
+              <p><strong>iPhone/iPad:</strong> abre la web en Safari → Compartir → “Añadir a pantalla de inicio”.</p>
+              <p><strong>Android/Chrome:</strong> usa el botón “Instalar” si aparece o el menú del navegador → “Instalar aplicación”.</p>
+            </div>
+          </details>
+        </section>
+
+        <section class="section-block">
+          <details class="details-card">
+            <summary>Fuentes y aviso</summary>
+            <div class="details-card__content">
+              <p>La app es de entretenimiento y apoyo de hábitos; no sustituye evaluación médica, nutricional ni fisioterapéutica.</p>
+              <ul>
+                <li><a href="https://my.clevelandclinic.org/health/diseases/22346-diastasis-recti" target="_blank" rel="noopener">Cleveland Clinic · Diastasis recti</a></li>
+                <li><a href="https://www.fhft.nhs.uk/patients-and-visitors/patient-information-library/pelvic-health-core-and-diastasis-recti-abdominis-exercises" target="_blank" rel="noopener">NHS · Core y diástasis</a></li>
+                <li><a href="https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html" target="_blank" rel="noopener">CDC · Pérdida de peso gradual</a></li>
+              </ul>
+            </div>
+          </details>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button class="nav-item is-active" data-nav="home" type="button"><span>⌂</span><small>Inicio</small></button>
+        <button class="nav-item" data-nav="training" type="button"><span>💪</span><small>Entreno</small></button>
+        <button class="nav-item" data-nav="diet" type="button"><span>🍽️</span><small>Dieta</small></button>
+        <button class="nav-item" data-nav="recipes" type="button"><span>👩‍🍳</span><small>Recetas</small></button>
+        <button class="nav-item" data-nav="progress" type="button"><span>📈</span><small>Progreso</small></button>
+        <button class="nav-item" data-nav="settings" type="button"><span>⚙️</span><small>Más</small></button>
+      </nav>
+    </section>
+  </main>
+
+  <dialog id="workout-dialog" class="modal">
+    <div class="modal__header"><div><span class="eyebrow" id="workout-phase">Entreno</span><h3 id="workout-title">Sesión</h3></div><button class="icon-btn" data-close-dialog="workout-dialog" aria-label="Cerrar" type="button">×</button></div>
+    <div id="workout-exercises" class="exercise-list"></div>
+    <div class="safety-card"><strong>Durante el esfuerzo</strong><p>Exhala, evita aguantar el aire y vigila que no aparezca un abombamiento marcado en la línea media.</p></div>
+    <button id="complete-workout" class="btn btn--primary btn--xl" type="button">Marcar entrenamiento completado</button>
+  </dialog>
+
+  <dialog id="recipe-dialog" class="modal">
+    <div class="modal__header"><div><span class="eyebrow">Receta Fortachona</span><h3 id="recipe-title">Receta</h3></div><button class="icon-btn" data-close-dialog="recipe-dialog" aria-label="Cerrar" type="button">×</button></div>
+    <div id="recipe-content"></div>
+  </dialog>
+
+  <dialog id="weight-dialog" class="modal modal--small">
+    <div class="modal__header"><div><span class="eyebrow">Peso semanal</span><h3>Registrar peso</h3></div><button class="icon-btn" data-close-dialog="weight-dialog" aria-label="Cerrar" type="button">×</button></div>
+    <form id="weight-form" class="form-card plain">
+      <label>Fecha<input id="weight-date" type="date" required></label>
+      <label>Peso (kg)<input id="weight-value" type="number" min="35" max="200" step="0.1" inputmode="decimal" required></label>
+      <button class="btn btn--primary" type="submit">Guardar peso</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
